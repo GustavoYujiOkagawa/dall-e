@@ -16,7 +16,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: ['https://dall-e-omega-peach.vercel.app', 'http://localhost:3000'], // Adicione os domínios permitidos aqui
+    origin: ['https://dall-e-omega-peach.vercel.app', 'https://dall-e-3v2f.onrender.com/'], // Adicione os domínios permitidos aqui
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'], // Headers permitidos
     credentials: true // Permite o envio de cookies e credenciais
