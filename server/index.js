@@ -14,7 +14,16 @@ dotenv.config();
 
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+    origin: ['https://dall-e-omega-peach.vercel.app', 'http://localhost:3000'], // Adicione os domínios permitidos aqui
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Headers permitidos
+    credentials: true // Permite o envio de cookies e credenciais
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json({ limit: '50mb' }));
 
 app.use('/api/v1/post', postRoutes);
@@ -34,7 +43,7 @@ const startServer = async () => {
     }catch (error){
         console.log(error)
     }
-
+    
 
     
 }
